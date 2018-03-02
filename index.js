@@ -3,16 +3,17 @@ require=(function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=
 
 var mapboxgl = require('mapbox-gl');
 var MapboxDraw = require('@mapbox/mapbox-gl-draw');
-var FreeMode = require('@mapbox/mapbox-gl-draw-free-mode');
+require('@mapbox/mapbox-gl-draw-freehand-mode');
 
 var element = document.createElement('div');
 document.querySelector('body').appendChild(element);
 
 element.style.height = "90vh";
 
+mapboxgl.accessToken = 'pk.eyJ1IjoiYmVuZWhta2UiLCJhIjoiY2plYTl6b3c2MHg5ODJxbGV4aXR4Z3p6YSJ9.d3jSAbsqSmpJwyVcp9iXbw';
 var map = new mapboxgl.Map({
     container: element,
-    style: 'https://tiles.stadiamaps.com/styles/osm_bright.json',
+    style: 'mapbox://styles/mapbox/streets-v9',
     center: [-122.431272, 37.778008],
     zoom: 12
 });
@@ -28,7 +29,7 @@ function geojsonFromDrawing() {
     console.log(Draw.getAll());
 }
 
-},{"@mapbox/mapbox-gl-draw":11,"@mapbox/mapbox-gl-draw-free-mode":"@mapbox/mapbox-gl-draw-free-mode","mapbox-gl":71}],2:[function(require,module,exports){
+},{"@mapbox/mapbox-gl-draw":11,"@mapbox/mapbox-gl-draw-freehand-mode":"@mapbox/mapbox-gl-draw-freehand-mode","mapbox-gl":71}],2:[function(require,module,exports){
 module.exports = Extent;
 
 function Extent(bbox) {
@@ -36671,7 +36672,7 @@ module.exports = {
     }
 };
 
-},{}],"@mapbox/mapbox-gl-draw-free-mode":[function(require,module,exports){
+},{}],"@mapbox/mapbox-gl-draw-freehand-mode":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
